@@ -60,6 +60,23 @@ the precise adoption date 2022-10-05 is WebSearch-corroborated) and
 Anti-Corruption, dated 2017-11-23, directly confirmed on the
 Municipality's own announcement page).
 
+## Culture catalog
+
+Alongside the ordinance catalog, this repo carries a **regional-culture
+catalog** (ADR-2607171400, `cloud-itonami-municipality-culture-catalog`
+in `com-junkawasaki/root`) — local dishes, protected products, beverages,
+festivals and heritage sites for Asunción:
+
+- `src/culture/facts.cljc` — the catalog, source of truth.
+- `schema/culture.edn` — DataScript schema.
+- `data/culture-tx.edn` — derived DataScript tx-data (regenerated from
+  the catalog, never hand-edited).
+
+Same provenance discipline as the ordinance catalog: every entry cites a
+source URL that was actually fetched and read on `:culture/retrieved-at`;
+summaries state only what the cited source confirms. An item not in
+`culture.facts/catalog` has no spec-basis — never fabricate one.
+
 ## License
 
 AGPL-3.0-or-later (matches the `cloud-itonami-iso3166-*` /
